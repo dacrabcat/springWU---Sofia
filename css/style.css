@@ -1,8 +1,10 @@
 body{
     background-color: antiquewhite;
+    width: 95vw;
+    margin: auto;
 }
 
-header, section, footer {
+header, nav, section, footer {
     border: solid, black, 2px;
     margin: 5px;
     padding: 5px;
@@ -53,30 +55,56 @@ footer {
 
 /* MOBILE */
 @media screen and (max-width:500px) {
-    header {
-        width: 70vw;
-    }
-
-    /* button code
-
-    */
-
-    nav {
-        width: 20vw;
+    #mobilenav {
+        width: 90vw;
+        height: 90vh;
         position: fixed;
         top: 0;
-        left: -90vw;
+        left: -100vw;
         transition: left 0.3s;
         box-shadow: 10px 0px 21px -10px rgba(0,0,0,0.75);
         z-index: 10;
     }
 
+    #fade-layer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.5);
+        display: none;
+        z-index: 5;
+    }
+    
+    .show {
+        left: 0;
+    }
+
+    #desktopnav {
+        display: none;
+    }
+
+    .fade-layer.visible{
+    display: block;
+    }
+
     header {
-        height: auto;
+        height: 20vh;
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+    }
+    
+    #button, .icon {
+        width: 10vw;
+        justify-self: left;
     }
 
     h1 {
-        height: 5vh;
+        height: 20vh;
+        text-align: center;
+        align-self: center;
     }
 
     h2 {
@@ -91,5 +119,9 @@ footer {
 
 /* DESKTOP */
 @media screen and (min-width:501px) {
-
+    #button, #mobilenav {
+        display: none;
+    }
 }
+
+
