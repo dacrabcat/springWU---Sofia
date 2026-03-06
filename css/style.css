@@ -1,13 +1,25 @@
+:root {
+    --border-radius: 10%;
+    --background-color: antiquewhite;
+    --primary-color: #003660;
+    --border: solid, black, 2px;
+}
+
+
 body{
-    background-color: antiquewhite;
+    background-color: var(--background-color);
     width: 95vw;
     margin: auto;
 }
 
-header, nav, section, footer {
-    border: solid, black, 2px;
+header, nav, section, aside, footer {
+    border: var(--border);
     margin: 5px;
     padding: 5px;
+}
+
+nav {
+    font-size: 1.5rem;
 }
 
 header {
@@ -24,16 +36,12 @@ h1, h2 {
 
 h1 {
     border: none;
-    height: 20vh;
+    height: auto;
     text-wrap: wrap;
     font-size: 3rem;
 }
 
-h2 {
-    width: 60vw;
-    height: 10vh;
-    
-}
+/* MAIN */
 
 #sc1 {
     display:flex;
@@ -41,7 +49,9 @@ h2 {
 }
 
 #tent {
-    height:70vh;
+    width: 40vw;
+    border-radius: var(--border-radius);
+    border: var(--border);
 }
 
 #sc2 {
@@ -52,21 +62,71 @@ footer {
     grid-area: fot;
 }
 
+/* ACCOUNT */
+#account-wrapper {
+    display: grid;
+    grid-template-areas: 
+    "hed hed"
+    "nav nav"
+    "sec as1"
+    "sec as2"
+    "fot fot";
+}
+
+#hed {
+    grid-area: hed;
+}
+
+#desktopnav {
+    grid-area: nav;
+}
+
+#sec {
+    grid-area: sec;
+    width: 2fr;
+}
+
+#as1 {
+    grid-area: as1;
+    width: 1fr;
+}
+
+#as2 {
+    grid-area: as2;
+    width: 1fr;
+}
+
+#fot {
+    grid-area: fot;
+}
+
+
+
 
 /* MOBILE */
 @media screen and (max-width:500px) {
-    #mobilenav {
-        width: 90vw;
+    .mobilenav {
+        width: 80vw;
         height: 90vh;
         position: fixed;
         top: 0;
-        left: -100vw;
+        left: -90vw;
         transition: left 0.3s;
         box-shadow: 10px 0px 21px -10px rgba(0,0,0,0.75);
         z-index: 10;
+        background-color: var(--primary-color);
+        color:var(--background-color);
     }
 
-    #fade-layer {
+    ul, li {
+        font-size: 1.5rem;
+    }
+
+    a:visited {
+    color: rgb(178, 177, 210);
+    }
+
+    .fade-layer {
         position: fixed;
         top: 0;
         left: 0;
@@ -112,15 +172,48 @@ footer {
     }
 
     #tent {
-        width: 80vw;
+        width: 50vw;
         height: auto;
     }
 }
 
 /* DESKTOP */
 @media screen and (min-width:501px) {
-    #button, #mobilenav {
+    #button, .mobilenav {
         display: none;
+    }
+
+    .icon {
+        width: 10vw;
+    }
+
+    #desktopnav {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    ul, li {
+        font-size: 1.5rem;
+        color:var(--primary-color);
+    }
+
+    ul {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-around;
+        grid-template-columns: 1fr, 1fr, 1fr;
+    }
+
+    h1 {
+        width: 1fr;
+        font-size: 10vw;
     }
 }
 
