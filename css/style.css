@@ -1,8 +1,13 @@
 :root {
-    --border-radius: 10%;
+    --border-radius: 15px;
     --background-color: antiquewhite;
     --primary-color: #003660;
     --border: solid, black, 2px;
+
+    /*FOR EVENTS*/
+    --arr: cyan;
+    --meeting: green; 
+    --camps: yellow; 
 }
 
 
@@ -10,6 +15,10 @@ body{
     background-color: var(--background-color);
     width: 95vw;
     margin: auto;
+}
+
+#main_wrapper, #account_wrapper, #event_wrapper, #scoutgroup_wrapper {
+    width: 95vw;
 }
 
 header, nav, section, aside, footer {
@@ -23,6 +32,7 @@ nav {
 }
 
 header {
+    border: none;
     text-align: center;
     align-items: center;
     text-align: center;
@@ -101,13 +111,53 @@ footer {
 }
 
 
+/*EVENT*/
+#sc1event {
+    border: var(--border);
+}
+
+#sc1event article {
+    border: var(--border);
+    margin: 5px;
+    padding: 5px;
+}
+
+#eart1{
+    background-color: var(--arr);
+}
+
+#eart2{
+    background-color: var(--camps);
+}
+
+#eart3{
+    background-color: var(--meeting);
+}
+
+
+/*SCOUTGROUP*/  
+#ssec1 {
+    display: flex;
+    
+}
+
+#ssec1 h2 {
+    width: 80vw;
+    font-size: 1.5rem;
+}
+
+#ssec1 article{
+    width: 40%;
+    font-size: 1.5rem;
+}
 
 
 /* MOBILE */
 @media screen and (max-width:500px) {
     .mobilenav {
-        width: 80vw;
+        width: 65vw;
         height: 90vh;
+        padding: 10px;
         position: fixed;
         top: 0;
         left: -90vw;
@@ -116,8 +166,14 @@ footer {
         z-index: 10;
         background-color: var(--primary-color);
         color:var(--background-color);
+        border-radius: var(--border-radius);
     }
 
+    .mobilenav p {
+        text-align: center;
+        font-size: 2rem;
+    }
+    
     ul, li {
         font-size: 1.5rem;
     }
