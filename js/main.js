@@ -9,3 +9,16 @@ function showMenu(){
     let layer = document.querySelector(".fade-layer");
     layer.classList.toggle("visible")
 }
+
+
+document.querySelector(".fade-layer").addEventListener("click",showPhoto)
+
+document.querySelector("#menubutton").addEventListener("click",showPhoto)
+
+function showPhoto(){
+    let photo = document.querySelector(".userphoto");
+    menu.classList.toggle("show2");
+
+    let layer = document.querySelector(".fade-layer");
+    layer.classList.toggle("visible")
+}

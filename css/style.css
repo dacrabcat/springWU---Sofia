@@ -34,8 +34,8 @@ nav {
 header {
     border: none;
     text-align: center;
-    align-items: center;
-    text-align: center;
+    align-items: center;    
+    height: 25vh;
 }
 
 h1, h2 {
@@ -73,22 +73,25 @@ footer {
 }
 
 /* ACCOUNT */
-#account-wrapper {
-    display: grid;
-    grid-template-areas: 
-    "hed hed"
-    "nav nav"
-    "sec as1"
-    "sec as2"
-    "fot fot";
-}
-
 #hed {
     grid-area: hed;
 }
 
 #desktopnav {
     grid-area: nav;
+}
+
+.userphoto {
+    display: none;
+}
+
+#menubutton {
+    width: 15vw;
+}
+
+#acch2 {
+    grid-area: hd2;
+    font-size: 3rem;
 }
 
 #sec {
@@ -136,19 +139,33 @@ footer {
 
 
 /*SCOUTGROUP*/  
+#wrapper-scoutgroup 
+
+#wrapper-scoutgroup h2 {
+    width: 80vw;
+    font-size: 2rem;
+}
+
 #ssec1 {
-    display: flex;
+    display: grid;
+    grid-template-areas: 
+    "hd hd"
+    "a1 a2"
+    "a1 a2";
     
 }
 
-#ssec1 h2 {
-    width: 80vw;
-    font-size: 1.5rem;
+#ssec1 article{
+    width: 50%;
+    font-size: 1.5rem;  
 }
 
-#ssec1 article{
-    width: 40%;
-    font-size: 1.5rem;
+#sgart1 {
+    grid-area: a1;
+}
+
+#sgart2 {
+    grid-area: a2;
 }
 
 
@@ -197,6 +214,10 @@ footer {
         left: 0;
     }
 
+    .show2 {
+        display: block;
+    }
+
     #desktopnav {
         display: none;
     }
@@ -209,28 +230,36 @@ footer {
         height: 20vh;
         justify-content: space-between;
         display: flex;
-        align-items: center;
+        align-content: center;
     }
     
     #button, .icon {
-        width: 10vw;
-        justify-self: left;
-    }
-
-    h1 {
-        height: 20vh;
-        text-align: center;
-        align-self: center;
+        width: 15vw;
+        justify-self: left; 
     }
 
     h2 {
         width: 95vw;
     }
 
+
+    /*MOBILE MAIN*/
     #tent {
         width: 50vw;
         height: auto;
     }
+
+    /*MOBILE ACCOUNT*/
+    #account_wrapper{
+        display: flex;
+
+    }
+    /*POPOUT BILD?*/
+
+    #as1 {
+        display: none;
+    }
+
 }
 
 /* DESKTOP */
@@ -270,6 +299,18 @@ footer {
     h1 {
         width: 1fr;
         font-size: 10vw;
+    }
+
+    /*DESKTOP ACCOUNT*/
+    #account-wrapper {
+        display: grid;
+        grid-template-areas: 
+        "hed hed"
+        "nav nav"
+        "hd2 hd2"
+        "sec as1"
+        "sec as2"
+        "fot fot";
     }
 }
 
