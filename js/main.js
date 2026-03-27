@@ -11,14 +11,14 @@ function showMenu(){
 }
 
 
-document.querySelector(".fade-layer").addEventListener("click",showPhoto)
+document.querySelector(".fade-layer2").addEventListener("click",showPhoto)
 
 document.querySelector("#menubutton").addEventListener("click",showPhoto)
 
 function showPhoto(){
-    let photo = document.querySelector(".userphoto");
-    menu.classList.toggle("show2");
+    let photo= document.querySelector(".userphoto");
+    photo.classList.toggle("show2");
 
-    let layer = document.querySelector(".fade-layer");
+    let layer = document.querySelector(".fade-layer2");
     layer.classList.toggle("visible")
 }

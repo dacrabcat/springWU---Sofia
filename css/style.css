@@ -51,6 +51,10 @@ h1 {
     font-size: 3rem;
 }
 
+h2 {
+    font-size: 2rem;
+}
+
 /* MAIN */
 
 #sc1 {
@@ -91,7 +95,6 @@ footer {
 
 #acch2 {
     grid-area: hd2;
-    font-size: 3rem;
 }
 
 #sec {
@@ -148,24 +151,16 @@ footer {
 
 #ssec1 {
     display: grid;
-    grid-template-areas: 
-    "hd hd"
-    "a1 a2"
-    "a1 a2";
-    
+    grid-template-columns: 1fr 1fr;
 }
 
 #ssec1 article{
-    width: 50%;
+    text-wrap: wrap;
     font-size: 1.5rem;  
-}
-
-#sgart1 {
-    grid-area: a1;
-}
-
-#sgart2 {
-    grid-area: a2;
+    border-bottom-style: dotted;
+    padding: 5px;
+    align-content: center;
+    text-align: center;
 }
 
 
@@ -209,21 +204,17 @@ footer {
         display: none;
         z-index: 5;
     }
+
+    .fade-layer.visible{
+    display: block;
+    }
     
     .show {
         left: 0;
     }
 
-    .show2 {
-        display: block;
-    }
-
     #desktopnav {
         display: none;
-    }
-
-    .fade-layer.visible{
-    display: block;
     }
 
     header {
@@ -244,22 +235,62 @@ footer {
 
 
     /*MOBILE MAIN*/
-    #tent {
-        width: 50vw;
-        height: auto;
+    #tent, #cred {
+        display: none;
     }
+
+    #welcome {
+        background-image: url(".../springWU---Sofia/img/scout_tent.jpg");
+    }
+
+
 
     /*MOBILE ACCOUNT*/
     #account_wrapper{
         display: flex;
 
     }
-    /*POPOUT BILD?*/
+    
+    /*POPOUT PROFILBILD*/
 
     #as1 {
         display: none;
     }
 
+    .fade-layer2 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.5);
+        display: none;
+        z-index: 5;
+    }
+
+    .fade-layer2.visible{
+        display: block;
+    }
+
+    .show2 {
+        display: block;
+    }
+
+    .userphoto {
+        width: 80vw;
+        height: auto;
+        position: fixed;
+        top: 15vh;
+        left: 10vw;
+        transition: left 0.3s;
+        border: var(--border);
+        z-index: 10;
+    }
+
+    /*SCOUTGROUP*/
+    #samorg-desk {
+        display: none;
+    }
 }
 
 /* DESKTOP */
@@ -311,6 +342,13 @@ footer {
         "sec as1"
         "sec as2"
         "fot fot";
+    }
+
+
+    /*SCOUTGROUP*/
+
+    #samorg-mobile {
+        display: none;
     }
 }
 
