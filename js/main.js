@@ -13,7 +13,7 @@ function showMenu(){
 
 document.querySelector(".fade-layer2").addEventListener("click",showPhoto)
 
-document.querySelector("#menubutton").addEventListener("click",showPhoto)
+document.querySelector("#accbutton").addEventListener("click",showPhoto)
 
 function showPhoto(){
     let photo= document.querySelector(".userphoto");

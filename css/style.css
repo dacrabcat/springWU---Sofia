@@ -25,17 +25,22 @@ header, nav, section, aside, footer {
     border: var(--border);
     margin: 5px;
     padding: 5px;
+    border-radius: var(--border-radius);
 }
 
 nav {
+    grid-area: nav;
     font-size: 1.5rem;
 }
 
 header {
+    grid-area: hm1;
     border: none;
-    text-align: center;
     align-items: center;    
     height: 25vh;
+    justify-content: space-around;
+    border: var(--border);
+    display: flex;
 }
 
 h1, h2 {
@@ -52,24 +57,49 @@ h1 {
 }
 
 h2 {
+    grid-area: hm2;
     font-size: 2rem;
 }
 
 /* MAIN */
 
+#main-wrapper {
+    display: grid;
+    grid-template-areas:
+    "hm1 hm1" 
+    "nav nav"
+    "hm2 hm2"
+    "sc1 tnt"
+    "sc2 sc2"
+    "fot fot"
+    ;
+}
+
 #sc1 {
+    grid-area: sc1;
     display:flex;
     justify-content: space-around;
+    width: 45vw;
+}
+
+#sctent {
+    grid-area: tnt;
+    text-align: center;
+    border: none;
+    padding: none;
+    margin: none;
 }
 
 #tent {
-    width: 40vw;
+    width: 45vw;
     border-radius: var(--border-radius);
     border: var(--border);
+    margin: none;
 }
 
 #sc2 {
     grid-area: sc2;
+    height: 50vh;
 }
 
 footer {
@@ -172,8 +202,8 @@ footer {
         padding: 10px;
         position: fixed;
         top: 0;
-        left: -90vw;
-        transition: left 0.3s;
+        right: -90vw;
+        transition: right 0.3s;
         box-shadow: 10px 0px 21px -10px rgba(0,0,0,0.75);
         z-index: 10;
         background-color: var(--primary-color);
@@ -210,7 +240,7 @@ footer {
     }
     
     .show {
-        left: 0;
+        right: 0;
     }
 
     #desktopnav {
@@ -218,15 +248,17 @@ footer {
     }
 
     header {
-        height: 20vh;
+        height: 15vh;
         justify-content: space-between;
-        display: flex;
         align-content: center;
+    }
+
+    #icondesk{
+        display: none;
     }
     
     #button, .icon {
         width: 15vw;
-        justify-self: left; 
     }
 
     h2 {
@@ -240,7 +272,12 @@ footer {
     }
 
     #welcome {
-        background-image: url(".../springWU---Sofia/img/scout_tent.jpg");
+        background-image: url("../img/scout_tent\ -\ kopia.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        height: 30vh;
     }
 
 
@@ -249,6 +286,10 @@ footer {
     #account_wrapper{
         display: flex;
 
+    }
+
+    #accbutton {
+        width: 10vw;
     }
     
     /*POPOUT PROFILBILD*/
@@ -303,6 +344,14 @@ footer {
         width: 10vw;
     }
 
+    #icondesk{
+        display: grid;
+    }
+
+    #accbutton {
+        display: none;
+    }
+
     #desktopnav {
         display: flex;
         align-items: center;
@@ -322,7 +371,6 @@ footer {
     }
 
     header {
-        display: flex;
         justify-content: space-around;
         grid-template-columns: 1fr, 1fr, 1fr;
     }
@@ -342,6 +390,7 @@ footer {
         "sec as1"
         "sec as2"
         "fot fot";
+        height: 100vh;
     }
 
 
