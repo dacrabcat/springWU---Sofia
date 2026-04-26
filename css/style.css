@@ -5,9 +5,9 @@
     --border: solid, black, 2px;
 
     /*FOR EVENTS*/
-    --arr: cyan;
-    --meeting: green; 
-    --camps: yellow; 
+    --arr: rgb(124, 237, 237);
+    --meeting: rgb(159, 228, 159); 
+    --camps: rgb(238, 238, 111); 
 }
 
 
@@ -17,11 +17,11 @@ body{
 }
 
 #main-wrapper, #account-wrapper, #event-rapper, #scoutgroup-wrapper {
-    min-height: 100vh;
     width: 95vw;
     justify-content:space-around;
     justify-self: center;
     margin: auto;
+    display: block;
 }
 
 header, nav, section, aside, footer {
@@ -54,7 +54,7 @@ header {
     width: 90vw;
 }
 
-h1, h2 {
+h1, h2, h3{
     align-content: center;
     justify-self: center;
     text-align: center;
@@ -67,18 +67,59 @@ h1 {
     font-size: 3rem;
 }
 
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    grid-area: fot;
+}
+
+footer img {
+    justify-self: center ;
+    width: 70%;
+}
+
+footer h4 {
+    text-align: center;
+    width: 50%;
+}
+
 /* MAIN */
+
+#main-wrapper {
+    display: grid;
+}
 
 h2 {
     grid-area: hm2;
     font-size: 2rem;
 }   
 
-#sc1 {
+#sc1-desk {
     grid-area: sc1;
     justify-content: space-around;
     width: 40vw;
-    
+    font-size: 3vw;
+    align-content: center;
+    color: var(--primary-color);
+}
+
+#sc1-mobile {
+    grid-area: sc1;
+    justify-content: center;
+    align-content: center;
+    width: 90vw;
+    text-align: center;
+    font-size: 2.5rem;
+    height: 15vh;
+    border: none;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+#sc1-mobile p {
+    margin: 5px;
+    padding: 0;
 }
 
 #sctent {
@@ -98,12 +139,43 @@ h2 {
 }
 
 #sc2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
     grid-area: sc2;
-    height: 45vh;
+    min-height: 30vh;
+    font-size: large;
 }
 
-footer {
-    grid-area: fot;
+#sc2art1 {
+    width: 100%;
+    height: 10vh;
+}
+
+#sc2art2, #sc2art3, #sc2art4, #sc2art5{
+    border-radius: var(--border-radius);
+    border: var(--border);
+    width:40%;
+    text-align: center;
+    align-content: center;
+    margin: 5px;
+}
+
+#sc2art2{
+    background-color: var(--arr);
+}
+
+#sc2art3{
+    background-color: var(--arr);
+}
+
+#sc2art4 {
+    background-color: var(--camps);
+}
+
+#sc2art5 {
+    background-color: var(--camps);
 }
 
 /* ACCOUNT */
@@ -127,38 +199,71 @@ footer {
     grid-area: hd2;
 }
 
-#accsec {
-    grid-area: sec;
-    width: 2fr;
-    display: flex;
+#accsec2 {
+    display: grid;
     justify-content: space-between;
     flex-wrap: wrap;
     height: auto;
 }
 
-#accsechead {
-    width: 100%;
-    text-align: center;
-    font-size: 1.5em;
-        
+#accsec {
+    grid-area: sc1;
+}
+
+#accsec2 {
+    grid-area: sc2;
+}
+
+#accsec3 {
+    grid-area: sc3;
+}
+
+#accsec, #accsec2{
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: auto;
+}
+
+#accsec h3, #accsec2 h3, #accsec3 h3 {
+    width: 70vw;
+    font-size: 2em;
+    align-self: top;
 }
 
 #accsec article {
-    width: 50%;
+    width: 45%;
     word-wrap: wrap;
-
     border-bottom-style: dotted;
     align-content: center;
     text-align: center;
 }
 
-#as1 {
-    grid-area: as1;
-    width: 1fr;
+#accsec2 article{
+    width: 45%;
+    border: dotted;
+    padding: 5px;
 }
 
-#as2 {
-    grid-area: as2;
+#accsec3 article{
+    display: flex;
+    justify-content: space-around;
+    border: dotted;
+    padding: 5px;
+}
+
+#accsec3 article h4{
+    width: 70%;
+    font-size: 1.5rem;
+}
+
+#medlemskaplogga {
+    width: 20%;
+}
+
+#as1 {
+    grid-area: as1;
     width: 1fr;
 }
 
@@ -175,37 +280,78 @@ footer {
     
 }
 
+#ehed{
+    height: 10%;
+    padding: 0;
+    border: none;
+}
+
 #sc1event article {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border: var(--border);
+    border-radius: var(--border-radius);
+    margin: 5px;
+    width: 2fr;
+    padding: 5px;
+}
+
+#key {
+    display: flex;  
+    justify-content: space-around;
+}
+
+#key h4{
+    font-size: 1.2rem;
     margin: 5px;
     padding: 5px;
-    width: 2fr;
+    text-align: left;
+    border-radius: var(--border-radius);
 }
 
 #sc1event article h3 {
+    text-align: center;
     width: 100%;
+    height: 20%;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
 }
 
 #sc1event article ul {
-    width: 1fr;
+    width: 90%;
+    height: 70%;
+    padding: 5px;
+    list-style-type: none;
+    justify-self: center;
+    align-self: top;
 }
 
 #sc1event article ul li {
+    width: 80%;
     font-size: 1rem;
-    justify-self: right;
+    padding: 5px;
+    margin: 0;
+    justify-self: center;
+    border-bottom: dotted black;
+    border-left: dotted black;
+    border-right: dotted black;
+    text-align: center;
 }
 
-#eart1{
+.list-top {
+    border-top: dotted black;
+}
+
+#arr, #eart1, #eart4{
     background-color: var(--arr);
 }
 
-#eart2{
+#läger, #eart2, #eart3{
     background-color: var(--camps);
 }
 
-#eart3{
+#möten, #eart5{
     background-color: var(--meeting);
 }
 
@@ -232,22 +378,51 @@ footer {
     text-align: center;
 }
 
+#ssec2 article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex-wrap: wrap;
+    text-wrap: wrap;
+    justify-content: space-around;
+    border: dotted 1.5px;
+    margin: 5px;
+    padding: 5px;
+}
+
+#ssec h3 {
+    width: 1fr;
+}
+
+#ssec2 p {
+    width: 2fr;
+}
+
+.avdelningslogga{
+    height: 15vw;
+    justify-self: right;
+    align-self: top;
+}
+
 
 /* MOBILE */
 @media screen and (max-width:500px) {
     .mobilenav {
-        width: 65vw;
-        height: 90vh;
-        padding: 10px;
-        position: fixed;
-        top: 0;
-        right: -90vw;
-        transition: right 0.3s;
-        box-shadow: 10px 0px 21px -10px rgba(0,0,0,0.75);
-        z-index: 10;
-        background-color: var(--primary-color);
-        color:var(--background-color);
-        border-radius: var(--border-radius); 
+    width: 65vw;
+    height: 90vh;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    right: -90vw;
+    transition: right 0.3s;
+    box-shadow: 10px 0px 21px -10px rgba(0,0,0,0.75);
+    z-index: 10;
+    background-color: var(--primary-color);
+    color:var(--background-color);
+    border-radius: var(--border-radius); 
+    }
+
+    #hed {
+        font-size: 2rem;
     }
 
     .mobilenav p {
@@ -261,7 +436,7 @@ footer {
     }
 
     a:link {
-        color: 178, 177, 210;
+        color: rgb(178, 177, 210);
     }
 
     a:visited {
@@ -270,7 +445,7 @@ footer {
 
     a:hover {
         color: rgb(178, 177, 210);
-        font-size: 2.8rem;
+        font-size: 2.1rem;
     }
 
     .fade-layer {
@@ -285,7 +460,7 @@ footer {
     }
 
     .fade-layer.visible{
-    display: block;
+        display: block;
     }
     
     .show {
@@ -294,12 +469,6 @@ footer {
 
     #desktopnav {
         display: none;
-    }
-
-    header {
-        height: 15vh;
-        justify-content: space-between;
-        align-content: center;
     }
 
     #icondesk{
@@ -322,8 +491,8 @@ footer {
         grid-template-areas:
         "hm1 hm1" 
         "nav nav"
-        "hm2 hm2"
         "sc1 sc1"
+        "hm2 hm2"
         "sc2 sc2"
         "fot fot"
         ;
@@ -332,7 +501,7 @@ footer {
         display: none;
     }
 
-    #sc1 {
+    #sc1-desk {
         display: none;
     }
 
@@ -342,14 +511,13 @@ footer {
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed;
-        height: 40vh;
+        height: 35vh;
         width: 90vw;
+        margin: 5px;
         border-radius: var(--border-radius);
-
-        word-wrap: wrap;
-        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        text-shadow: -1.5px 0 white, 0 1.5px white, 1.5px 0 white, 0 -1.5px white;
         
-        color: white;
+        color: var(--primary-color);
     }
 
 
@@ -360,7 +528,7 @@ footer {
     }
 
     #accsechead {
-    width: 50%;
+    width: 100%;
     text-align: center;
     }
 
@@ -430,6 +598,10 @@ footer {
         display: grid;
     }
 
+    #event-wrapper h2, #account-wrapper h2, #scoutgroup-wrapper h2{
+        font-size: 5rem;
+    }
+
     #accbutton {
         display: none;
     }
@@ -438,6 +610,7 @@ footer {
         display: flex;
         align-items: center;
         justify-content: space-around;
+        font-size: 2rem;
     }
 
     ul, li {
@@ -452,14 +625,20 @@ footer {
         justify-content: space-around;
     }
 
-    header {
-        justify-content: space-around;
-        grid-template-columns: 1fr, 1fr, 1fr;
-    }
-
     h1 {
         width: 1fr;
         font-size: 10vw;
+    }
+
+    footer img {
+        justify-self: center;
+        width: 60%;
+    }
+
+    footer h4 {
+        width: 50%;
+        font-size: 2rem;
+        text-align: center;
     }
 
     /*DESKTOP MAIN*/
@@ -473,7 +652,19 @@ footer {
     "sc2 sc2"
     "fot fot"
     ;
-}
+    }
+
+    #sc1-mobile {
+        display: none;
+    }
+
+    #sc1 {
+        height: 50%;
+    }
+
+    #sc2art2, #sc2art3, #sc2art4, #sc2art5{
+        width:20%;
+    }
 
     /*DESKTOP ACCOUNT*/
     #account-wrapper {
@@ -482,11 +673,11 @@ footer {
         "hed hed"
         "nav nav"
         "hd2 hd2"
-        "sec as1"
-        "sec as2"
+        "sc1 as1"
+        "sc2 sc3"
         "fot fot";
-        height: 100vh;
         grid-template-columns: 70% 30%;
+        height: 100vh;
         justify-content: space-around;
     }
 
@@ -498,19 +689,68 @@ footer {
         margin: none;
     }
 
+    #accsec article, #accsec2 article, #accsec3 article{
+    font-size: 1.5rem;
+    }
+
     #deskuserphoto {
         border-radius: var(--border-radius);
         border: var(--border);
         width: 100%;
         margin: none;
     }
+    
 
+    /* DESKTOP EVENT */
+    #sc1event {
+        display: flex;
+        flex-wrap: wrap;
+        height: auto;
+        justify-content: space-around;
+    }
 
-    /*SCOUTGROUP*/
+    #event-wrapper h2 {
+        font-size: 5rem;
+    }
+    
+    #key h4{
+        font-size: 2rem;
+        padding: 7px;
+    }
+
+    #sc1event article {
+        width: 40vw;
+    }
+
+     #sc1event article h3{
+        font-size: 2rem;
+    }
+
+    #sc1event article ul{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: center;
+    }
+
+    #sc1event article ul li{
+        width: 20vw;
+        color: black;
+        font-size: 1.5rem;
+    }
+
+    /* DESKTOP SCOUTGROUP */
 
     #samorg-mobile {
         display: none;
     }
+
+    #ssec2 h3 {
+        font-size: 2.5rem;
+    }
+
+    #ssec2 article p {
+        text-align: center;
+        font-size: 1.5rem;
+    }
 }
-
-
