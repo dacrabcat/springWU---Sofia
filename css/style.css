@@ -1,13 +1,14 @@
 :root {
     --border-radius: 15px;
-    --background-color: antiquewhite;
+    --background-color: #faebd7;
     --primary-color: #003660;
     --border: solid, black, 2px;
+    --font-family: Sans-serif, Verdana;
 
     /*FOR EVENTS*/
-    --arr: rgb(124, 237, 237);
-    --meeting: rgb(159, 228, 159); 
-    --camps: rgb(238, 238, 111); 
+    --arr: #7ceded;
+    --meeting: #9fe49f; 
+    --camps: #eeee6f; 
 }
 
 
@@ -16,12 +17,13 @@ body{
     margin: 0;
 }
 
-#main-wrapper, #account-wrapper, #event-rapper, #scoutgroup-wrapper {
+#main-wrapper, #account-wrapper, #event-wrapper, #scoutgroup-wrapper {
     width: 95vw;
-    justify-content:space-around;
+    justify-content: space-around;
     justify-self: center;
     margin: auto;
     display: block;
+    font-family: var(--font-family);
 }
 
 header, nav, section, aside, footer {
@@ -42,12 +44,30 @@ nav {
     justify-self: center;
 }
 
+nav ul {
+    list-style-type: none;
+    margin: 10px;
+}
+
+a:link {
+        color: var(--primary-color);
+    }
+
+a:visited {
+        color: var(--primary-color);
+    }
+
+a:hover {
+        color: var(--primary-color);
+        font-size: 2.1rem;
+    }
+
 header {
     grid-area: hm1;
     border: none;
     align-items: center;    
     height: 25vh;
-    justify-content: space-around;
+    justify-content: center;
     justify-self: center;
     border: var(--border);
     display: flex;
@@ -65,6 +85,9 @@ h1 {
     height: auto;
     text-wrap: wrap;
     font-size: 3rem;
+    margin: 0px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 footer {
@@ -76,7 +99,7 @@ footer {
 
 footer img {
     justify-self: center ;
-    width: 70%;
+    width: 100%;
 }
 
 footer h4 {
@@ -92,42 +115,44 @@ footer h4 {
 
 h2 {
     grid-area: hm2;
-    font-size: 2rem;
 }   
 
-#sc1-desk {
+#sc1-desk, #sc1-mobile{
     grid-area: sc1;
-    justify-content: space-around;
-    width: 40vw;
-    font-size: 3vw;
     align-content: center;
     color: var(--primary-color);
+
 }
 
-#sc1-mobile {
-    grid-area: sc1;
+#sc1-desk {
+    display: flex;
+    flex-wrap: wrap;
+    width: 40vw;
+    font-size: 3vw;
+    padding: 10px;
+}
+
+#sc1-desk h2 {
+    font-size: 100%;
+    text-wrap: wrap;
+}
+
+#sc1-mobile, #sc3 {
     justify-content: center;
-    align-content: center;
     width: 90vw;
     text-align: center;
     font-size: 2.5rem;
-    height: 15vh;
     border: none;
-    color: var(--primary-color);
+    padding: 5px;
     margin: 0;
-}
-
-#sc1-mobile p {
-    margin: 5px;
-    padding: 0;
 }
 
 #sctent {
     grid-area: tnt;
     text-align: center;
     border: none;
-    padding: none;
-    margin: none;
+    padding: 0px;
+    margin: 0px;
     
 }
 
@@ -135,7 +160,7 @@ h2 {
     width: 40vw;
     border-radius: var(--border-radius);
     border: var(--border);
-    margin: none;
+    margin: 0px;
 }
 
 #sc2 {
@@ -148,12 +173,11 @@ h2 {
     font-size: large;
 }
 
-#sc2art1 {
+#sc2head {
     width: 100%;
-    height: 10vh;
 }
 
-#sc2art2, #sc2art3, #sc2art4, #sc2art5{
+#sc2art1, #sc2art2, #sc2art3, #sc2art4{
     border-radius: var(--border-radius);
     border: var(--border);
     width:40%;
@@ -162,20 +186,47 @@ h2 {
     margin: 5px;
 }
 
+#sc2art1{
+    background-color: var(--arr);
+}
+
 #sc2art2{
     background-color: var(--arr);
 }
 
-#sc2art3{
-    background-color: var(--arr);
+#sc2art3 {
+    background-color: var(--camps);
 }
 
 #sc2art4 {
     background-color: var(--camps);
 }
 
-#sc2art5 {
-    background-color: var(--camps);
+#sc3 {
+    grid-area: sc3;
+    justify-self: center;
+    color: var(--primary-color);
+}
+
+#sc4 {
+    grid-area: sc4;
+    border: none;
+    width: 90vw;
+    justify-self: center;
+    border-radius:var(--border-radius);
+    padding: 0px;
+    text-align: center;
+}
+
+#sc4 img{
+    border: var(--border);
+    border-radius: var(--border-radius);
+    width: 100%;
+    margin-top: 10px;
+}
+
+#sc4 a:hover, #sctent a:hover {
+    font-size: 1rem;
 }
 
 /* ACCOUNT */
@@ -220,7 +271,6 @@ h2 {
 
 #accsec, #accsec2{
     display: flex;
-    grid-template-columns: 1fr 1fr;
     justify-content: space-between;
     flex-wrap: wrap;
     height: auto;
@@ -229,12 +279,12 @@ h2 {
 #accsec h3, #accsec2 h3, #accsec3 h3 {
     width: 70vw;
     font-size: 2em;
-    align-self: top;
+    align-self: start;
 }
 
 #accsec article {
     width: 45%;
-    word-wrap: wrap;
+    text-wrap: wrap;
     border-bottom-style: dotted;
     align-content: center;
     text-align: center;
@@ -264,7 +314,6 @@ h2 {
 
 #as1 {
     grid-area: as1;
-    width: 1fr;
 }
 
 #fot {
@@ -277,7 +326,7 @@ h2 {
 /*EVENT*/
 #sc1event {
     border: var(--border);
-    
+    justify-items: center;
 }
 
 #ehed{
@@ -293,7 +342,7 @@ h2 {
     border: var(--border);
     border-radius: var(--border-radius);
     margin: 5px;
-    width: 2fr;
+    width: 90%;
     padding: 5px;
 }
 
@@ -312,7 +361,7 @@ h2 {
 
 #sc1event article h3 {
     text-align: center;
-    width: 100%;
+    width: 90%;
     height: 20%;
     font-size: 1.5rem;
     margin-bottom: 5px;
@@ -324,7 +373,7 @@ h2 {
     padding: 5px;
     list-style-type: none;
     justify-self: center;
-    align-self: top;
+    align-self: start;
 }
 
 #sc1event article ul li {
@@ -361,21 +410,31 @@ h2 {
 
 #wrapper-scoutgroup h2 {
     width: 80vw;
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 #ssec1 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 #ssec1 article{
     text-wrap: wrap;
     font-size: 1.5rem;  
     border-bottom-style: dotted;
-    padding: 5px;
+    padding: 0px;
     align-content: center;
     text-align: center;
+    width: 50%;
+}
+
+#ssec1 h3 {
+    font-size: 1.5rem;
+    width: 100%;
+}
+
+#ssec1 h4 {
+    font-size: 1.2rem;
 }
 
 #ssec2 article {
@@ -384,23 +443,19 @@ h2 {
     flex-wrap: wrap;
     text-wrap: wrap;
     justify-content: space-around;
-    border: dotted 1.5px;
+    border: dotted;
     margin: 5px;
     padding: 5px;
 }
 
-#ssec h3 {
-    width: 1fr;
-}
-
 #ssec2 p {
-    width: 2fr;
+    width: 100%;
 }
 
 .avdelningslogga{
     height: 15vw;
     justify-self: right;
-    align-self: top;
+    align-self: start;
 }
 
 
@@ -435,16 +490,16 @@ h2 {
         margin: 5px;
     }
 
-    a:link {
-        color: rgb(178, 177, 210);
+    .mobilenav a:link {
+        color: var(--background-color);
     }
 
-    a:visited {
-    color: rgb(178, 177, 210);
+    .mobilenav a:visited {
+        color: var(--background-color);
     }
 
-    a:hover {
-        color: rgb(178, 177, 210);
+    .mobilenav a:hover {
+        color: var(--background-color);
         font-size: 2.1rem;
     }
 
@@ -494,6 +549,8 @@ h2 {
         "sc1 sc1"
         "hm2 hm2"
         "sc2 sc2"
+        "sc3 sc3"
+        "sc4 sc4"
         "fot fot"
         ;
     }
@@ -518,6 +575,17 @@ h2 {
         text-shadow: -1.5px 0 white, 0 1.5px white, 1.5px 0 white, 0 -1.5px white;
         
         color: var(--primary-color);
+        font-size: 2rem;
+    }
+
+    #sc1-mobile h3, #sc3 h3 {
+    margin: 5px;
+    padding: 0;
+    
+    }
+
+    #tent_desktop {
+        display: none;
     }
 
 
@@ -534,7 +602,6 @@ h2 {
 
     #accbutton {
         height: 10vw;
-        position: right;
 
     }
     
@@ -610,11 +677,14 @@ h2 {
         display: flex;
         align-items: center;
         justify-content: space-around;
-        font-size: 2rem;
+    }
+
+    #desktopnav a{
+        font-size: 90%;
     }
 
     ul, li {
-        font-size: 1.5rem;
+        font-size: 3rem;
         color:var(--primary-color);
     }
 
@@ -626,7 +696,7 @@ h2 {
     }
 
     h1 {
-        width: 1fr;
+        width: 50%;
         font-size: 10vw;
     }
 
@@ -635,36 +705,54 @@ h2 {
         width: 60%;
     }
 
-    footer h4 {
+    footer h3 {
         width: 50%;
         font-size: 2rem;
         text-align: center;
     }
 
+    h2 {
+        font-size: 5rem;
+    }
+
     /*DESKTOP MAIN*/
     #main-wrapper {
-    display: grid;
-    grid-template-areas:
-    "hm1 hm1" 
-    "nav nav"
-    "sc1 tnt"
-    "hm2 hm2"
-    "sc2 sc2"
-    "fot fot"
-    ;
+        display: grid;
+        grid-template-areas:
+        "hm1 hm1" 
+        "nav nav"
+        "hm2 hm2"
+        "sc1 tnt"
+        "sc2 sc2"
+        "sc3 sc3"
+        "sc4 sc4"
+        "fot fot"
+        ;
     }
 
     #sc1-mobile {
         display: none;
     }
 
-    #sc1 {
-        height: 50%;
+    #sc1-desk {
+        height: 80%;
+        align-self: start;
+        margin: 10px;
     }
 
-    #sc2art2, #sc2art3, #sc2art4, #sc2art5{
-        width:20%;
+    #sc2art1, #sc2art2, #sc2art3, #sc2art4{
+        font-size: 2rem;
+        width: 20%;
     }
+
+    #sc3, #sc2 h3 {
+        font-size: 3rem;
+    }
+
+    #tent_mobile {
+        display: none;
+    }
+
 
     /*DESKTOP ACCOUNT*/
     #account-wrapper {
@@ -685,8 +773,8 @@ h2 {
         display: flex;
         justify-content: space-around;
         border: none;
-        padding: none;
-        margin: none;
+        padding: 0px;
+        margin: 0px;
     }
 
     #accsec article, #accsec2 article, #accsec3 article{
@@ -697,7 +785,7 @@ h2 {
         border-radius: var(--border-radius);
         border: var(--border);
         width: 100%;
-        margin: none;
+        margin: 0px;
     }
     
 
@@ -707,10 +795,6 @@ h2 {
         flex-wrap: wrap;
         height: auto;
         justify-content: space-around;
-    }
-
-    #event-wrapper h2 {
-        font-size: 5rem;
     }
     
     #key h4{
@@ -722,8 +806,9 @@ h2 {
         width: 40vw;
     }
 
-     #sc1event article h3{
-        font-size: 2rem;
+    #sc1event h3{
+        font-size: 3rem;
+        width: 100%;
     }
 
     #sc1event article ul{
@@ -734,7 +819,7 @@ h2 {
     }
 
     #sc1event article ul li{
-        width: 20vw;
+        width: 30vw;
         color: black;
         font-size: 1.5rem;
     }
@@ -745,7 +830,12 @@ h2 {
         display: none;
     }
 
-    #ssec2 h3 {
+    #ssec2 h3, #ssec1 h3 {
+        font-size: 3.5rem;
+    }
+
+    #ssec2 h4 {
+        margin-left: 10px;
         font-size: 2.5rem;
     }
 
